@@ -6,7 +6,7 @@ Our embedding dictionary can be accessed from: https://twittertextdata.s3.amazon
 
 To successfully run the file:
 
-Add the downloaded embeddings to AI_Cloud4/glove.twitter.27B.25d.txt OR Edit the training_config.json to point it to the location of the embedding dictionary
+Add the downloaded embeddings to AI_Cloud4/glove.twitter.27B.25d.txt 
 
 Use the following command on terminal to run sentiment_training.py
 
