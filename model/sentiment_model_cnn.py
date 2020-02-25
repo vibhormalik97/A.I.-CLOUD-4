@@ -13,6 +13,7 @@ import os
 def keras_model_fn(_, config):
 
     embeddings_index = dict()
+    
     file = open('/Users/vibhormalik/Downloads/Assignment4/glove.twitter.27B.25d.txt', encoding="utf-8") #Add file path here
     for i in file:
         values = i.split()
@@ -20,18 +21,18 @@ def keras_model_fn(_, config):
         coefs = asarray(values[1:], dtype='float32')
         embeddings_index[word] = coefs
     file.close()
-    print('Loaded %s word vectors.' % len(embeddings_index))
+    
 
-    vocab_size = config["embeddings_dictionary_size"]
-    words_rows = len(embeddings_index.keys())
+    size_vocab = config["embeddings_dictionary_size"]
+    word_rows = len(embeddings_index.keys())
 
     matrix_emb = np.zeros((words_rows,25))
-    for index, key in zip(range(0, words_rows), embeddings_index.keys()):
+    for index, key in zip(range(0, word_rows), embeddings_index.keys()):
         matrix_emb[index] = embeddings_index[key]
     
     cnn_model = Sequential()
     #add model layers
-    cnn_model.add(Embedding(vocab_size, 25, weights=[matrix_emb], input_length=20, trainable=False))
+    cnn_model.add(Embedding(size_vocab, 25, weights=[matrix_emb], input_length=20, trainable=False))
     cnn_model.add(Conv1D(filters = 100, strides = 1, kernel_size = 2, activation = 'relu', padding = 'valid'))
     # model.add(Conv1D(filters = 100, kernel_size = 2,activation = 'relu', padding = 'valid', strides = 1))
     cnn_model.add(GlobalMaxPool1D())
