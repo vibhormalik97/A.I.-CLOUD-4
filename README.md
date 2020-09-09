@@ -1,4 +1,4 @@
-# A.I.-CLOUD-4
+# Deep-Learning-Pipeline-using-AWS
 
 The focus of this assignment was on building a pipeline for cleaning the text and training a CNN model for sentiment analysis.
 
