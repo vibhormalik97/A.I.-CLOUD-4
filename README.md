@@ -1,5 +1,12 @@
 # A.I.-CLOUD-4
 
+The focus of this assignment was on building a pipeline for cleaning the text and training a CNN model for sentiment analysis.
+
+The following AWS services were used:
+- AWS Glue
+- AWS Lambda
+- AWS SageMaker
+
 Find the Report and screenshots in the file: Assignment4_Report.pdf
 
 Our embedding dictionary can be accessed from: https://twittertextdata.s3.amazonaws.com/glove.twitter.27B.25d.txt
